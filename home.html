@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisanal Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar-container {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .search-bar {
+            border: 2px solid #4CAF50;
+            border-radius: 20px;
+            padding: 8px 20px;
+            background-color: #fff;
+            color: #4CAF50;
+            font-size: 16px;
+            width: 200px;
+            transition: width 0.4s ease-in-out;
+        }
+
+        .search-bar:focus {
+            width: 300px;
+        }
+
+        .hero {
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            text-align: center;
+            color: black; 
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+
+        .hero h2,
+        .hero p {
+            color: #fff;
+        }
+
+        .featured-products {
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+        }
+
+        .product-card p {
+            margin-top: 0;
+            color: #555;
+        }
+
+        .product-card ul {
+            padding: 0;
+            margin: 10px 0;
+            list-style-type: none;
+        }
+
+        .product-card ul li {
+            margin-bottom: 5px;
+        }
+
+        .product-variations {
+            margin-bottom: 10px;
+        }
+
+        .product-variations button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .product-variations button:hover {
+            background-color: #45a049;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        .similar-products {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Contact form styles */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        .home-link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="home.html"><button><b><h style="color: black;">Artisanal Marketplace</h></b></a></h1>
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html"><button><b><h style="color: black;">Products</h></b></a></li>
+          
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 style="color: black; background-color: white;">Welcome to the Artisanal Marketplace</h2>
+            <p style="color: black; background-color: white;">Discover a world of handcrafted delicacies and unique flavors.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Artisanal Marketplace</p>
+        </div>
+    </footer>
+</body>
+</html>

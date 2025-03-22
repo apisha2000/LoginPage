@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisanal Marketplace - Products</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar-container {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .search-bar {
+            border: 2px solid #4CAF50;
+            border-radius: 20px;
+            padding: 8px 20px;
+            background-color: #fff;
+            color: #4CAF50;
+            font-size: 16px;
+            width: 200px;
+            transition: width 0.4s ease-in-out;
+        }
+
+        .search-bar:focus {
+            width: 300px;
+        }
+
+        .product-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 60%;
+        }
+
+        .product-card {
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .product-details h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .product-details p {
+            color: #777;
+        }
+
+        .product-variations {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .product-variations select {
+            padding: 8px 16px;
+            background-color: #f4f4f4;
+            color: #333;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+        }
+
+        .add-to-cart {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        .buy-now {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+
+        .buy-now:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .cart h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .cart-content {
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .cart-item-details h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cart-item-details p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="home.html"><button><b><h style="color: black;">Artisanal Marketplace</h></b></a></h1>
+                <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html"><button><b><h style="color: black;">Products</h></b></a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-wrapper">
+                <div class="product-card">
+                    <img src="product1.jpg" alt="Handcrafted Cheese">
+                    <div class="product-details">
+                        <h3>Handcrafted Cheese</h3>
+                        <p>Aged to perfection, our handcrafted cheese offers a rich and savory flavor.</p>
+                        <p>Price: $10.99</p>
+                        <div class="product-variations">
+                            <select class="select-size">
+                                <option value="" selected disabled>Select Size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                            <select class="select-color">
+                                <option value="" selected disabled>Select Flavor</option>
+                                <option value="cheddar">Cheddar</option>
+                                <option value="mozzarella">Mozzarella</option>
+                                <option value="gouda">Gouda</option>
+                            </select>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                        <a href="#" class="buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="product2.jpg" alt="Organic Honey">
+                    <div class="product-details">
+                        <h3>Organic Honey</h3>
+                        <p>Pure, organic honey harvested from local apiaries, perfect for sweetening any dish.</p>
+                        <p>Price: $8.99</p>
+                        <div class="product-variations">
+                            <select class="select-size">
+                                <option value="" selected disabled>Select Size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                            <select class="select-color">
+                                <option value="" selected disabled>Select Flavor</option>
+                                <option value="amber">Amber</option>
+                                <option value="golden">Golden</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                        <a href="#" class="buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="product3.jpg" alt="Handcrafted Soap">
+                    <div class="product-details">
+                        <h3>Handcrafted Soap</h3>
+                        <p>Indulge in our luxurious handcrafted soap, made with natural ingredients and essential oils.</p>
+                        <p>Price: $5.99</p>
+                        <div class="product-variations">
+                            <select class="select-size">
+                                <option value="" selected disabled>Select Size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                            <select class="select-color">
+                                <option value="" selected disabled>Select Scent</option>
+                                <option value="lavender">Lavender</option>
+                                <option value="citrus">Citrus</option>
+                                <option value="peppermint">Peppermint</option>
+                            </select>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                        <a href="#" class="buy-now">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="product4.jpg" alt="Artisanal Bread">
+                    <div class="product-details">
+                        <h3>Artisanal Bread</h3>
+                        <p>Freshly baked artisanal bread, made with organic flour and natural yeast.</p>
+                        <p>Price: $3.99</p>
+                        <div class="product-variations">
+                            <select class="select-size">
+                                <option value="" selected disabled>Select Size</option>
+                                <option value="small">Small Loaf</option>
+                                <option value="medium">Medium Loaf</option>
+                                <option value="large">Large Loaf</option>
+                            </select>
+                            <select class="select-color">
+                                <option value="" selected disabled>Select Flavor</option>
+                                <option value="whole-wheat">Whole Wheat</option>
+                                <option value="sourdough">Sourdough</option>
+                                <option value="multigrain">Multigrain</option>
+                            </select>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                        <a href="#" class="buy-now">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart">
+        <h2>Cart</h2>
+        <div class="cart-content">
+            <!-- Cart items go here -->
+            <div class="cart-item">
+                <img src="product1.jpg" alt="Handcrafted Cheese">
+                <div class="cart-item-details">
+                    <h3>Handcrafted Cheese</h3>
+                    <p>Size: Medium, Flavor: Cheddar</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="buy-now">Buy Now</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Artisanal Marketplace</p>
+        </div>
+    </footer>
+</body>
+</html>
+
